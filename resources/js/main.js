@@ -30,10 +30,6 @@ $("#submit_btn").on("click", function() {
     input.name = "";
 });
 
-$("#correct-btn").on("click", function() {
-    alert("Hello");
-})
-
 
 /* Animations on scroll */
 // $('.main-heading').waypoint(function(direction) {
