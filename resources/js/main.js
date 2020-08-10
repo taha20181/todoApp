@@ -7,7 +7,7 @@ var correct_btn = document.getElementById("correct-btn");
 input.value = "";
 input.name = "";
 
-date_time.innerHTML = moment().format('MMMM Do YYYY dddd, h:mm:ss a');
+date_time.innerHTML = moment().format('MMMM Do YYYY dddd');
 var count = 0;
 $("#submit_btn").on("click", function() {
     var task = input.value;

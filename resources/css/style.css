@@ -22,6 +22,17 @@ main {
     flex-grow: 1;
 }
 
+nav {
+    display: flex;
+    padding: 1rem;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
 .row {
     display: flex;
     justify-content: center;
@@ -67,11 +78,13 @@ h1 {
     border: 2px solid aliceblue;
     border-radius: 50px;
     padding: .5rem 1rem;
+    background-color: aliceblue;
 }
 
 #submit_btn:hover {
     color: aliceblue;
     transition: ease-in-out .2s;
+    background-color: transparent;
 }
 
 .date-time-container {
@@ -168,6 +181,15 @@ footer {
     #task-list div{ width: 70%; }
 
     .date-time-container { font-size: 80%; }
+
+    .container {
+        display: block;
+        min-width: 400px;
+    }
+
+    .navbar-title { font-size: 150%; }
+
+    .navbar-brand { padding-bottom: 2rem; }
 }
 
 @media (min-width: 480px) {
@@ -176,11 +198,31 @@ footer {
     #task-list div{ width: 60%; }
 }
 
+@media (min-width: 576px) {
+
+    .container {
+        min-width: 550px;
+    }
+}
+
 
 @media (min-width: 768px) {
     .input-form #task_input { width: 45%; }
 
     #task-list div{ width: 40%; }
+
+    .navbar-title {
+        font-size: 200%;
+    }
+
+    .container {
+        display: flex;
+        min-width: 600px;
+    }
+
+    .navbar-brand {
+        padding-bottom: 0;
+    }
 }
 
 
@@ -190,16 +232,22 @@ footer {
     #task-list div{ width: 35%; }
 
     .date-time-container { justify-content: end; }
+
+    .container { min-width: 800px; }
 }
 
 @media (min-width: 1024px) {
     .input-form #task_input { width: 35%; }
 
     #task-list div{ width: 30%; }
+
+    .container { min-width: 800px; }
 }
 
 @media (min-width: 1200px) {
     .input-form #task_input { width: 28%; }
 
     #task-list div{ width: 25%; }
+
+    .container { min-width: 1000px; }
 }
