@@ -27,6 +27,17 @@ nav {
     padding: 1rem;
 }
 
+h1 {
+    font-size: 140%;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+button {
+    outline: none;
+}
+
+
 .navbar-brand {
     display: flex;
     align-items: center;
@@ -39,16 +50,10 @@ nav {
     margin: auto;
 }
 
-h1 {
-    font-size: 200%;
-    font-weight: 600;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
 .header {
     display: flex;
     justify-content: center;
-    padding: 4rem 0;
+    padding: 3rem 0;
 }
 
 .input-form {
@@ -73,7 +78,7 @@ h1 {
     box-shadow: -1px 1px 5px 1px aliceblue;
 }
 
-#submit_btn {
+#add-btn {
     font-size: 80%;
     border: 2px solid aliceblue;
     border-radius: 50px;
@@ -81,10 +86,11 @@ h1 {
     background-color: aliceblue;
 }
 
-#submit_btn:hover {
+#add-btn:hover {
     color: aliceblue;
     transition: ease-in-out .2s;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .date-time-container {
@@ -93,7 +99,7 @@ h1 {
 
 
 .tasks {
-    padding: 4rem 0;
+    padding: 2.5rem 0;
 }
 
 #task-list {
@@ -122,6 +128,7 @@ h1 {
 
 #task-list div li span button {
     padding-right: .5rem;
+    outline: none;
 }
 
 #task-list div li span button {
@@ -129,6 +136,7 @@ h1 {
 color: aliceblue;
 background: transparent;
 font-size: 100%;
+outline: none;
 }
 
 
@@ -142,9 +150,19 @@ font-size: 100%;
     transition: ease-in-out .1s;
 }
 
+.small {
+    font-size: 85%;
+    padding: 1rem;
+}
+
 .completed {
     box-shadow: -1px 1px 5px 5px green;
     border: 2px solid green;
+    width: 80% !important;
+}
+
+.uncomplete {
+    box-shadow: -1px 1px 5px 5px red;
 }
 
 .hover {
@@ -184,12 +202,17 @@ footer {
 
     .container {
         display: block;
-        min-width: 400px;
+        min-width: 350px;
     }
 
     .navbar-title { font-size: 150%; }
 
     .navbar-brand { padding-bottom: 2rem; }
+
+    .main-logo {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
 }
 
 @media (min-width: 480px) {
@@ -212,7 +235,7 @@ footer {
     #task-list div{ width: 40%; }
 
     .navbar-title {
-        font-size: 200%;
+        font-size: 160%;
     }
 
     .container {
@@ -222,6 +245,11 @@ footer {
 
     .navbar-brand {
         padding-bottom: 0;
+    }
+
+    .main-logo {
+        height: 2.6em;
+        width: 2.6em;
     }
 }
 
