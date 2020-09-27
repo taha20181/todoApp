@@ -93,9 +93,9 @@ button {
     cursor: pointer;
 }
 
-.date-time-container {
-    padding: 1rem;
-}
+/* .date-time-container {
+    padding: .5rem;
+} */
 
 
 .tasks {
@@ -140,29 +140,11 @@ outline: none;
 }
 
 
-#task-list div li span #wrong-btn:hover {
-    color: red;
-    transition: ease-in-out .1s;
-}
 
-#task-list div li span #correct-btn:hover {
-    color: green;
-    transition: ease-in-out .1s;
-}
 
 .small {
     font-size: 85%;
     padding: 1rem;
-}
-
-.completed {
-    box-shadow: -1px 1px 5px 5px green;
-    border: 2px solid green;
-    width: 80% !important;
-}
-
-.uncomplete {
-    box-shadow: -1px 1px 5px 5px red;
 }
 
 .hover {
@@ -212,6 +194,16 @@ footer {
     .main-logo {
         height: 2.5rem;
         width: 2.5rem;
+    }
+
+    #task-list div li span #wrong-btn:hover {
+        color: red;
+        transition: ease-in-out .1s;
+    }
+    
+    #task-list div li span #correct-btn:hover {
+        color: green;
+        transition: ease-in-out .1s;
     }
 }
 

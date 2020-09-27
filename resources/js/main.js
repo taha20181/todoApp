@@ -5,9 +5,6 @@ var date_time = document.getElementById("date-time");
 var correct_btn = document.querySelectorAll("#correct-btn");
 var counter_text = document.querySelector(".small");
 
-
-console.log(counter_text.innerHTML);
-
 input.value = "";
 input.name = "";
 
@@ -17,75 +14,57 @@ var count = 0;
 var id = 4000;
 tasks = [];
 
-function show_task(tasks) {
-	tasks.forEach(function(task) {
-		$("#task-list").append("<div class='task-list-element'><li>" + task.task + "<span><button class='btn' id='wrong-btn'><i class='fas fa-times-circle'></i></button><button class='btn' id='correct-btn'><i class='fas fa-check-circle'></i></button></span></li></div>");
-	});
+
+// $("input").keypress(function(event) {
+// 	if (event.which === 13) {
+// 		var task = $(this).val();
+
+// 		console.log(task);
+
+// 		$("#task-list").append("<div class='task-list-element' id='" + id + "'><li>" + task + "<span><button class='btn' id='wrong-btn'><i class='fas fa-times-circle'></i></button><button class='btn' id='correct-btn'><i class='fas fa-check-circle'></i></button></span></li></div>");
+// 	}
+// });
+
+function counter(count, type) {
+	counter_text.innerHTML = "You have " + count + " tasks left";
 }
 
-// $("input[type='text'").keypress(function(event) {
-// 	if (event.which === 13) {
-
-// 	}
-// })
-
-$("#add-btn").on("click", function() {
+$("#add-btn").click(function() {
 	var task = input.value;
 	$("#task-list").append("<div class='task-list-element' id='" + id + "'><li>" + task + "<span><button class='btn' id='wrong-btn'><i class='fas fa-times-circle'></i></button><button class='btn' id='correct-btn'><i class='fas fa-check-circle'></i></button></span></li></div>");
 	tasks.push({"task": task, "id": id});
 	id++;
 	console.log(tasks);
 	count++;
-	counter_text.innerHTML = "You have " + count + " tasks left";
+	counter(count);
 	input.value = "";
 	input.name = "";
 });
 
 
-$(document).on("click", "#correct-btn", function() {
-	var list_text = document.querySelector(".task-list-element li");
-	console.log(list_text.textContent);
-	// $(".task-list-element").addClass("completed");
-	console.log(list_text);
+$("#task-list").on("click", "div li span #correct-btn", (function() {
+	$(this).parent().parent().css(
+		{color: "green"}
+	);
+	$("#wrong-btn").remove();
+	count--;
+	counter(count);
+}));
 
-	tasks.forEach(function(task) {
-		if (list_text.textContent == task) {
-			console.log("this will be deleted");
-		}
-	});
-	// $(this).addClass("temp");
-	// $("#correct-btn").on("click", function() {
-	// 	$(this).addClass("completed");
-	// });
-});
-
-$("#correct-btn").click(function(){
-	$(this).parent().remove();
-});
-
-  
-
-// correct_btn.forEach(function(btn) {
-//     btn.addEventListener("click", function() {
-//         alert("Hello world");
-//     });
-// });
-
-
-// $("span").find("#correct-btn").forEach(function(btn) {
-// 	btn.addEventListener("click", function() {
-// 		alert("hello world");
-// 	});
-// });
-
+$("#task-list").on("click", "div li span #wrong-btn", (function(){
+	console.log("Clicked Wrong Button");
+	$(this).parent().parent().parent().remove();
+	count--;
+	counter(count);
+}));
 
 
 /* Animations on scroll */
-// $('.main-heading').waypoint(function(direction) {
-//     $('.main-heading').addClass('animated flash');
-// }, {
-//     offset: '50%'
-// });
+$('.main-heading').waypoint(function(direction) {
+    $('.main-heading').addClass('animated flash');
+}, {
+    offset: '50%'
+});
 
 // add_btn.addEventListener("click", function() {
 //     var task = input.value;
@@ -98,10 +77,3 @@ $("#correct-btn").click(function(){
 //     node.appendChild(node1);
 //     document.getElementById("task-list").appendChild(node);
 // });
-
-// functionality added on 2nd AUG
-// added jquery
-// animation link
-// modified code based on jquery
-// added append instead of appendchild
-// added event listeners like click and hover
